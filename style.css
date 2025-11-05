@@ -1,0 +1,170 @@
+/* Custom Properties and Reset */
+:root {
+    --color-primary: #f53686;    /* Soft Pink Pastel */
+    --color-secondary: #2816c7;  /* Mint Green Pastel */
+    --color-text: #454343;       /* Soft Dark Gray */
+    --color-background: #f1c4b0; /* Off-White/Cream Background */
+    --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Caveat', cursive; /* Cute handwritten font */
+    font-size: 2.5em;
+    color: var(--color-primary);
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+    transform: scale(1.05); /* Cute hover bounce */
+}
+
+/* --- Hero Section & Parallax --- */
+.hero-section {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    background-image: url('OIP.webp'); /* Placeholder image */
+    background-attachment: fixed; /* KEY for Parallax effect */
+    background-position: center;
+    background-size: cover;
+    color: white; 
+}
+
+.hero-content {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px); /* Soft glass effect */
+    color: var(--color-text);
+}
+
+.hero-content h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5em;
+    margin-bottom: 5px;
+}
+.hero-content p {
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+/* --- Menu Content --- */
+.menu-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.menu-category {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 30px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- Menu Item Styling (The Beauty) --- */
+.menu-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift and scale for cute effect */
+    box-shadow: 0 8px 15px rgba(248, 200, 220, 0.5); /* Pink shadow for cute pop */
+}
+
+.menu-item h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3em;
+    color: var(--color-text);
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.price {
+    float: right;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.4em;
+}
+
+.menu-item p {
+    font-size: 0.95em;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--color-primary);
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4em;
+    margin-top: 50px;
+}
+
+/* Specific item styling (Added by JS on hover) */
+.menu-item.hot-glow {
+    box-shadow: 0 0 10px 5px rgba(255, 100, 100, 0.5); /* Warm glow for hot items */
+}
+
+.menu-item.cold-glow {
+    box-shadow: 0 0 10px 5px rgba(100, 200, 255, 0.5); /* Cool glow for cold items */
+}
